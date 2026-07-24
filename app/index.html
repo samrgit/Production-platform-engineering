@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Production Platform Engineering Dashboard</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#0f172a;
+color:#f8fafc;
+padding:40px;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+}
+
+.header{
+text-align:center;
+margin-bottom:45px;
+}
+
+.header h1{
+font-size:42px;
+font-weight:700;
+color:#f8fafc;
+}
+
+.header p{
+margin-top:10px;
+color:#94a3b8;
+font-size:17px;
+}
+
+.section{
+margin-top:35px;
+}
+
+.section h2{
+font-size:26px;
+margin-bottom:18px;
+font-weight:600;
+color:#38bdf8;
+}
+
+.status-card{
+
+background:#1e293b;
+
+border:1px solid #334155;
+
+border-radius:14px;
+
+padding:25px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.status{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:16px 0;
+
+border-bottom:1px solid #334155;
+
+font-size:17px;
+
+}
+
+.status:last-child{
+border:none;
+}
+
+.running{
+
+background:#16a34a;
+
+padding:6px 14px;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:22px;
+
+margin-top:20px;
+
+}
+
+.card{
+
+background:#1e293b;
+
+border:1px solid #334155;
+
+border-radius:14px;
+
+padding:25px;
+
+transition:.25s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.4);
+
+}
+
+.card small{
+
+display:block;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+color:#64748b;
+
+margin-bottom:8px;
+
+font-size:12px;
+
+}
+
+.card h3{
+
+font-size:24px;
+
+margin-bottom:15px;
+
+}
+
+.card p{
+
+line-height:1.7;
+
+color:#cbd5e1;
+
+margin-bottom:20px;
+
+}
+
+.button{
+
+display:block;
+
+background:#334155;
+
+color:white;
+
+text-decoration:none;
+
+padding:12px;
+
+text-align:center;
+
+margin-top:12px;
+
+border-radius:8px;
+
+border:1px solid #475569;
+
+transition:.25s;
+
+font-weight:600;
+
+}
+
+.button:hover{
+
+background:#475569;
+
+}
+
+.service{
+
+display:flex;
+
+justify-content:space-between;
+
+background:#1e293b;
+
+border:1px solid #334155;
+
+padding:18px;
+
+border-radius:12px;
+
+margin-bottom:14px;
+
+}
+
+.footer{
+
+margin-top:60px;
+
+text-align:center;
+
+color:#64748b;
+
+line-height:1.8;
+
+}
+
+.footer strong{
+
+color:#38bdf8;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h1>Production Platform Engineering</h1>
+
+<p>
+Infrastructure Monitoring Dashboard
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>Infrastructure Status</h2>
+
+<div class="status-card">
+
+<div class="status">
+<span>Nginx Web Server</span>
+<span class="running">Healthy</span>
+</div>
+
+<div class="status">
+<span>Prometheus</span>
+<span class="running">Running</span>
+</div>
+
+<div class="status">
+<span>Grafana</span>
+<span class="running">Running</span>
+</div>
+
+<div class="status">
+<span>Node Exporter</span>
+<span class="running">Running</span>
+</div>
+
+<div class="status">
+<span>cAdvisor</span>
+<span class="running">Running</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Monitoring Center</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<small>Monitoring</small>
+
+<h3>Host Metrics</h3>
+
+<p>
+
+View CPU, Memory, Disk and Network metrics collected from Node Exporter.
+
+</p>
+
+<a class="button"
+
+href="http://localhost:3000/d/rYdddlPWk/node-exporter-full?orgId=1&from=now-24h&to=now&timezone=browser&var-ds_prometheus=ffsykqd7s969sa&var-job=node-exporter&var-nodename=a9b1a0495e6c&var-node=node-exporter:9100&refresh=1m"
+
+target="_blank">
+
+Open Node Exporter Dashboard
+
+</a>
+
+</div>
+
+<div class="card">
+
+<small>Monitoring</small>
+
+<h3>Container Metrics</h3>
+
+<p>
+
+Monitor Docker container CPU, Memory and Resource usage through cAdvisor.
+
+</p>
+
+<a class="button"
+
+href="http://localhost:3000/d/ae3c41d7-cea5-4cca-a918-5708706b4d1a/cadvisor-docker-insights?orgId=1&from=now-3h&to=now&timezone=browser&refresh=5s"
+
+target="_blank">
+
+Open cAdvisor Dashboard
+
+</a>
+
+</div>
+<div class="card">
+
+<small>Monitoring</small>
+
+<h3>Prometheus</h3>
+
+<p>
+
+Inspect scrape targets and execute PromQL queries to analyze metrics collected from your infrastructure.
+
+</p>
+
+<a class="button"
+href="http://localhost:9090/targets"
+target="_blank">
+
+View Targets
+
+</a>
+
+<a class="button"
+href="http://localhost:9090/query"
+target="_blank">
+
+Open Query Explorer
+
+</a>
+
+</div>
+
+<div class="card">
+
+<small>Application</small>
+
+<h3>Health Check</h3>
+
+<p>
+
+Verify the application health endpoint exposed by the Nginx web server.
+
+</p>
+
+<a class="button"
+href="http://localhost:8080/health"
+target="_blank">
+
+Open Health Endpoint
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Docker Services</h2>
+
+<div class="service">
+<span>production-web</span>
+<span class="running">Running</span>
+</div>
+
+<div class="service">
+<span>prometheus</span>
+<span class="running">Running</span>
+</div>
+
+<div class="service">
+<span>grafana</span>
+<span class="running">Running</span>
+</div>
+
+<div class="service">
+<span>node-exporter</span>
+<span class="running">Running</span>
+</div>
+
+<div class="service">
+<span>cadvisor</span>
+<span class="running">Running</span>
+</div>
+
+</div>
+
+<div class="footer">
+
+<p><strong>Production Platform Engineering Dashboard</strong></p>
+
+<p>Developed by Samsoorya Rajakumar</p>
+
+<p>Docker &nbsp;|&nbsp; Nginx &nbsp;|&nbsp; Prometheus &nbsp;|&nbsp; Grafana &nbsp;|&nbsp; Node Exporter &nbsp;|&nbsp; cAdvisor</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
