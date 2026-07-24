@@ -71,7 +71,7 @@ production-platform-engineering/
 
 # Architecture
 
-![Architecture Diagram](architecture/architecture-diagram.png)
+![Architecture Diagram](docs/architecture/architecture%20diagram.png)
 
 ---
 
@@ -178,38 +178,35 @@ docker compose down
 
 ## Dashboard
 
-![Dashboard](screenshots/dashboard.png)
-
+![Dashboard](docs/screenshots/01-dashboard.png)
 ---
 
 ## Docker Compose
 
-![Docker Compose](screenshots/docker-compose.png)
-
+![Docker Compose](docs/screenshots/02-docker_compose_ps.png)
 ---
 
 ## Prometheus Targets
 
-![Prometheus](screenshots/prometheus-targets.png)
+![Prometheus Targets](docs/screenshots/03-prometheus_targets.png)
 
 ---
 
 ## Node Exporter Dashboard
 
-![Node Exporter](screenshots/grafana-node-exporter.png)
+![Node Exporter](docs/screenshots/04-node_exporter_dashboard.png)
 
 ---
 
 ## cAdvisor Dashboard
 
-![cAdvisor](screenshots/grafana-cadvisor.png)
+![cAdvisor](docs/screenshots/05-cadvisor-dashboard.png)
 
 ---
 
 ## Health Endpoint
 
-![Health](screenshots/health-endpoint.png)
-
+![Health](docs/screenshots/06-health.png)
 ---
 
 # Continuous Integration
