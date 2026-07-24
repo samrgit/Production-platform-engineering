@@ -71,8 +71,7 @@ production-platform-engineering/
 
 # Architecture
 
-![Architecture Diagram](docs/architecture/architecture%20diagram.png)
-
+![Architecture Diagram](docs/architecture/architecture-diagram.png)
 ---
 
 # Monitoring Components
