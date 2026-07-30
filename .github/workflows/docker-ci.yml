@@ -1,18 +1,49 @@
-name: Docker Compose CI
+name: Production Platform CI
 
 on:
   push:
     branches:
       - main
+
   pull_request:
+    branches:
+      - main
 
 jobs:
-  validate-compose:
+
+  validate:
+
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Validate Docker Compose
-        run: docker compose config
+        run: docker compose config --quiet
+
+      - name: Start Stack
+        run: docker compose up -d
+
+      - name: Wait for Services
+        run: sleep 20
+
+      - name: Check Running Containers
+        run: docker compose ps
+
+      - name: Verify Prometheus
+        run: curl --fail http://localhost:9090/-/healthy
+
+      - name: Verify Alertmanager
+        run: curl --fail http://localhost:9093/-/healthy
+
+      - name: Verify Grafana
+        run: curl --fail http://localhost:3000/api/health
+
+      - name: Verify Nginx Health
+        run: curl --fail http://localhost:8080/health
+
+      - name: Stop Stack
+        if: always()
+        run: docker compose down
