@@ -1,0 +1,36 @@
+groups:
+  - name: production-alerts
+
+    rules:
+
+      - alert: PrometheusDown
+        expr: up{job="prometheus"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Prometheus is down"
+
+      - alert: HighCPUUsage
+        expr: rate(node_cpu_seconds_total{mode!="idle"}[5m]) > 0.80
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU usage above 80%"
+
+      - alert: HighMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) > 0.90
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Memory usage above 90%"
+
+      - alert: ContainerDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "A monitored service is down"
