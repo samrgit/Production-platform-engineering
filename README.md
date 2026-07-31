@@ -353,9 +353,9 @@ Alertmanager receives alerts from Prometheus and provides centralized alert mana
 
 ---
 
-## Prometheus Rules
+## Prometheus Alert Rules
 
-![Rules](docs/screenshots/07-prometheus_rules.png)
+![Prometheus Rules](docs/screenshots/07-prometheus_rules.png)
 
 ---
 
@@ -379,11 +379,9 @@ Alertmanager receives alerts from Prometheus and provides centralized alert mana
 
 ---
 
-## GitHub Actions
+## GitHub Actions CI
 
 ![GitHub Actions](docs/screenshots/github-actions-success.png)
-
----
 
 ## Health Endpoint
 
