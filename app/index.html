@@ -287,6 +287,11 @@ Infrastructure Monitoring Dashboard
 <span class="running">Running</span>
 </div>
 
+<div class="status">
+<span>Alertmanager</span>
+<span class="running">Running</span>
+</div>
+
 </div>
 
 </div>
@@ -297,7 +302,7 @@ Infrastructure Monitoring Dashboard
 
 <div class="grid">
 
-<div class="card">
+ <div class="card">
 
 <small>Monitoring</small>
 
@@ -311,7 +316,7 @@ View CPU, Memory, Disk and Network metrics collected from Node Exporter.
 
 <a class="button"
 
-href="http://localhost:3000/d/rYdddlPWk/node-exporter-full?orgId=1&from=now-24h&to=now&timezone=browser&var-ds_prometheus=ffsykqd7s969sa&var-job=node-exporter&var-nodename=a9b1a0495e6c&var-node=node-exporter:9100&refresh=1m"
+href="http://localhost:3000/d/rYdddlPWk/node-exporter-full?orgId=1"
 
 target="_blank">
 
@@ -335,7 +340,7 @@ Monitor Docker container CPU, Memory and Resource usage through cAdvisor.
 
 <a class="button"
 
-href="http://localhost:3000/d/ae3c41d7-cea5-4cca-a918-5708706b4d1a/cadvisor-docker-insights?orgId=1&from=now-3h&to=now&timezone=browser&refresh=5s"
+href="http://localhost:3000/d/ae3c41d7-cea5-4cca-a918-5708706b4d1a/cadvisor-docker-insights?orgId=1"
 
 target="_blank">
 
@@ -344,6 +349,31 @@ Open cAdvisor Dashboard
 </a>
 
 </div>
+
+<div class="card">
+
+<small>Monitoring</small>
+
+<h3>Production Dashboard</h3>
+
+<p>
+
+View the custom Grafana dashboard built specifically for this project. It provides infrastructure health, CPU usage, memory usage, running containers, and active alert monitoring using custom PromQL queries.
+
+</p>
+
+<a class="button"
+
+href="http://localhost:3000/d/adpv4bt/production-platform-dashboard?orgId=1&from=now-6h&to=now&timezone=browser"
+
+target="_blank">
+
+Open Production Dashboard
+
+</a>
+
+</div>
+
 <div class="card">
 
 <small>Monitoring</small>
@@ -352,12 +382,14 @@ Open cAdvisor Dashboard
 
 <p>
 
-Inspect scrape targets and execute PromQL queries to analyze metrics collected from your infrastructure.
+Inspect scrape targets, execute PromQL queries, and view active monitoring rules.
 
 </p>
 
 <a class="button"
+
 href="http://localhost:9090/targets"
+
 target="_blank">
 
 View Targets
@@ -365,10 +397,46 @@ View Targets
 </a>
 
 <a class="button"
-href="http://localhost:9090/query"
+
+href="http://localhost:9090/rules"
+
 target="_blank">
 
-Open Query Explorer
+View Alert Rules
+
+</a>
+
+<a class="button"
+
+href="http://localhost:9090/alerts"
+
+target="_blank">
+
+View Active Alerts
+
+</a>
+
+</div>
+
+<div class="card">
+
+<small>Monitoring</small>
+
+<h3>Alertmanager</h3>
+
+<p>
+
+View alert routing, active alerts, and alert management configuration integrated with Prometheus.
+
+</p>
+
+<a class="button"
+
+href="http://localhost:9093"
+
+target="_blank">
+
+Open Alertmanager
 
 </a>
 
@@ -387,7 +455,9 @@ Verify the application health endpoint exposed by the Nginx web server.
 </p>
 
 <a class="button"
+
 href="http://localhost:8080/health"
+
 target="_blank">
 
 Open Health Endpoint
@@ -398,7 +468,7 @@ Open Health Endpoint
 
 </div>
 
-</div>
+</div>   
 
 <div class="section">
 
@@ -411,6 +481,11 @@ Open Health Endpoint
 
 <div class="service">
 <span>prometheus</span>
+<span class="running">Running</span>
+</div>
+
+<div class="service">
+<span>alertmanager</span>
 <span class="running">Running</span>
 </div>
 
@@ -433,11 +508,23 @@ Open Health Endpoint
 
 <div class="footer">
 
-<p><strong>Production Platform Engineering Dashboard</strong></p>
+<p>
+<strong>Production Platform Engineering Dashboard</strong>
+</p>
 
-<p>Developed by Samsoorya Rajakumar</p>
+<p>
+Developed by <strong>Samsoorya Rajakumar</strong>
+</p>
 
-<p>Docker &nbsp;|&nbsp; Nginx &nbsp;|&nbsp; Prometheus &nbsp;|&nbsp; Grafana &nbsp;|&nbsp; Node Exporter &nbsp;|&nbsp; cAdvisor</p>
+<p>
+Docker &nbsp;|&nbsp;
+Nginx &nbsp;|&nbsp;
+Prometheus &nbsp;|&nbsp;
+Alertmanager &nbsp;|&nbsp;
+Grafana &nbsp;|&nbsp;
+Node Exporter &nbsp;|&nbsp;
+cAdvisor
+</p>
 
 </div>
 
